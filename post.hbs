@@ -93,21 +93,19 @@
 
 <script type="text/javascript">
   if (GHOSTIUM.haveDisqus) {
-    { { #post } }
+    {{#post}}
     var disqus_identifier = '{{comment_id}}';
-    {
-      {
-        /post}}
+    {{/post}}
 
-        if (typeof DISQUS !== 'object') {
-          (function () {
-            var s = document.createElement('script'); s.async = true;
-            s.type = 'text/javascript';
-            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-          }());
-        }
-      } else {
-        document.querySelector('.post-comments').remove();
-      }
+    if (typeof DISQUS !== 'object') {
+      (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+    }
+    } else {
+      document.querySelector('.post-comments').remove();
+    }
 </script>
